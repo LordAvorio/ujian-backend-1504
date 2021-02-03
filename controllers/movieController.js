@@ -163,7 +163,7 @@ module.exports = {
                 tempTime = checkRows[0].time_id
             }
             
-            let sql2 = `UPDATE schedules SET location_id = ${tempLocation}, time_id = ${tempTime}`
+            let sql2 = `UPDATE schedules SET location_id = ${tempLocation}, time_id = ${tempTime} WHERE id = ${id}`
             let rows2 = await asyncQuery(sql2)
 
             let sql3 = `SELECT * FROM schedules WHERE id = ${id}`
